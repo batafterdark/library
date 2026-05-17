@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="library.js" defer></script>
+    <link rel="stylesheet" href="library.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img id="logo" src="https://scontent.fkhi2-3.fna.fbcdn.net/v/t39.30808-6/487427481_10162659046332454_4808250068398985883_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ytxEQlM9pWEQ7kNvwHrZqS5&_nc_oc=AdrCs7MAXj5xvhLPzyGrj6SLe3UmTwk-j5u44R5N3UHBh6LUkuNqnn2c0x3R5_-reaM&_nc_zt=23&_nc_ht=scontent.fkhi2-3.fna&_nc_gid=pOl8Ol1ucTcxh0nJuvkKaA&_nc_ss=7b2a8&oh=00_Af4bSNttvTXd5B6K-xTIFiN5qXZlhRmzKGZDG3TULw8hCw&oe=6A0F876F" alt="logo">
+        </div>
+        <div class="bookStuff">
+            <div class="addBookForm">
+                <form id="addBookForm" action="#" method="post">
+                    <div class="option">
+                        <input id="bookName" name="bookName" type="text">
+                        <label for="bookName">Book</label>
+                    </div>
+                    <div class="option">
+                        <input id="authorName" name="authorName" type="text">
+                        <label for="authorName">Author</label>
+                    </div>
+                    <div class="option">
+                        <input id="numOfPages" name="numOfPages" type="text">
+                        <label for="numOfPages"># Of Pages</label>
+                    </div>
+                    <div class="option">
+                        <select name="readStatus" id="readStatus">
+                        <option value="Read" selected>Read</option>
+                        <option value="notRead">Not Read</option>
+                        </select>
+                        <label for="bookName">Read Status</label>
+                    </div>
+                </form>
+                <button form="addBookForm" type="submit" id="addBook">Submit</button>
+            </div>
+            <div class="showBooks">
+                <p id="yap"></p>
+                <button id="showBooks">Show Books</button>
+                <div id="books" class="books"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

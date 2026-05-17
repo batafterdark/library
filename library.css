@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(233, 30, 143, 0.16) 0 9px, transparent 10px),
+        radial-gradient(circle at 82% 12%, rgba(20, 100, 165, 0.18) 0 12px, transparent 13px),
+        radial-gradient(circle at 72% 78%, rgba(15, 159, 199, 0.14) 0 15px, transparent 16px),
+        linear-gradient(135deg, #f6f1e8 0%, #d9e7e5 48%, #f3d6cf 100%);
+    color: #1f2933;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.48;
+    background-image:
+        linear-gradient(28deg, transparent 0 46%, rgba(49, 65, 81, 0.18) 47% 51%, transparent 52% 100%),
+        linear-gradient(152deg, transparent 0 46%, rgba(49, 65, 81, 0.12) 47% 51%, transparent 52% 100%),
+        radial-gradient(circle, rgba(124, 58, 237, 0.18) 0 2px, transparent 3px),
+        linear-gradient(90deg, rgba(20, 100, 165, 0.13) 0 8px, transparent 8px 16px, rgba(233, 30, 143, 0.11) 16px 23px, transparent 23px 36px);
+    background-size:
+        180px 150px,
+        220px 180px,
+        70px 70px,
+        150px 80px;
+    background-position:
+        12px 24px,
+        90px 60px,
+        20px 18px,
+        42px 96px;
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding: 34px;
+    font-family: roboto, Arial, sans-serif;
+}
+    .logo{
+        display: flex;
+        justify-content: center;
+    }
+        #logo{
+            height: 230px;
+            width: min(430px, 90vw);
+            object-fit: cover;
+            border: 6px solid white;
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(23, 30, 38, 0.28);
+        }
+    .bookStuff{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: min(1050px, 100%);
+        gap: 30px;
+    }
+        .addBookForm{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 28px;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(31, 41, 51, 0.18);
+            backdrop-filter: blur(10px);
+        }
+            #addBookForm{
+                display: flex;
+                flex-direction: row;
+                gap: 18px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            #addBookForm input,
+                #addBookForm select {
+                    width: 190px;
+                    padding: 13px 14px;
+                    font-size: 1rem;
+                    color: #1f2933;
+                    background-color: #f8fafc;
+                    border: 2px solid #d4dde7;
+                    border-radius: 10px;
+                    outline: none;
+                    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+                }
+            #addBookForm input:focus,
+                #addBookForm select:focus {
+                    background-color: white;
+                    border-color: #1481a8;
+                    box-shadow: 0 0 0 4px rgba(20, 129, 168, 0.16);
+                }
+                .option{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            #addBook{
+                background: linear-gradient(135deg, #0f9fc7, #1464a5);
+                font-family: roboto;
+                border-radius: 45px;
+                font-size: 1.1rem;
+                font-weight: 800;
+                color: white;
+                padding: 15px 28px;
+                min-width: 160px;
+                align-self: center;
+                justify-self: center;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 12px 24px rgba(20, 100, 165, 0.32);
+                transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            }
+            #addBook:hover{
+                transform: translateY(-2px);
+                box-shadow: 0 16px 30px rgba(20, 100, 165, 0.42);
+                filter: brightness(1.05);
+            }
+        .showBooks{
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+            #yap{
+                font-size: 1.2rem;
+                font-family: roboto;
+                align-self: center;
+                font-style: italic;
+                text-align: center;
+                margin: 0;
+                padding: 12px 18px;
+                color: #314151;
+                background-color: rgba(255, 255, 255, 0.68);
+                border-radius: 999px;
+            }
+            #showBooks{
+                background: linear-gradient(135deg, #e91e8f, #7c3aed);
+                color: white;
+                min-width: 170px;
+                padding: 15px 28px;
+                font-family: roboto;
+                align-self: center;
+                justify-content: center;
+                border-radius: 45px;
+                border: none;
+                font-size: 1.1rem;
+                font-weight: 800;
+                cursor: pointer;
+                box-shadow: 0 12px 24px rgba(124, 58, 237, 0.3);
+                transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            }
+            #showBooks:hover{
+                transform: translateY(-2px);
+                box-shadow: 0 16px 30px rgba(124, 58, 237, 0.42);
+                filter: brightness(1.05);
+            }
+            .books{
+                display: flex;
+                flex-direction: row;
+                gap: 24px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-bottom: 40px;
+            }
+                #individualBook{
+                    width: 250px;
+                    min-height: 250px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 8px;
+                    background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+                    border: 1px solid rgba(49, 65, 81, 0.14);
+                    border-top: 8px solid #1464a5;
+                    border-radius: 16px;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    padding: 24px;
+                    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.34);
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+                #individualBook:hover{
+                    transform: translateY(-6px);
+                    box-shadow: 0 24px 45px rgba(0, 0, 0, 0.42);
+                }
+                    #individualBook p{
+                        margin: 0;
+                    }
+                    #currentBookName{
+                        font-size: 1.45rem;
+                        font-weight: 900;
+                        color: #111827;
+                    }
+                    #currentBookAuthor{
+                        color: #546170;
+                        font-style: italic;
+                    }
+                    #currentBookPages,
+                    #currentBookStatus{
+                        align-self: center;
+                        width: 100%;
+                        padding: 9px 12px;
+                        background-color: #eef5f7;
+                        border-radius: 999px;
+                        color: #263746;
+                        font-size: 0.98rem;
+                        font-weight: 700;
+                    }
+label{
+    align-self: center;
+    justify-self: center;
+    font-size: 0.9rem;
+    font-family: roboto;
+    font-weight: 800;
+    color: #405161;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+@media (max-width: 680px){
+    .container{
+        padding: 20px;
+    }
+
+    .addBookForm{
+        padding: 22px;
+    }
+
+    #addBookForm,
+    .option,
+    #addBookForm input,
+    #addBookForm select{
+        width: 100%;
+    }
+}
